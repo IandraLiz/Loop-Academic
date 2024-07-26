@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Header } from './components/layout/Header';
-import { Navbar } from './components/layout/Navbar';
+import { Navbar } from './components/layout/MenuPrincipal';
 import { MenuLateral } from './components/layout/MenuLateral';
 import { Footer } from './components/layout/Footer';
 import { Login } from './components/pages/Login';

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import megaphone from '../../img/megaphone.png';
-import confetti from '../../img/confetti.png';
+import megaphone from '../../../public/img/megaphone.png';
+import confetti from '../../../public/img/confetti.png';
 
 export function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -40,7 +40,7 @@ export function Home() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center italic ml-[-180px]">Menu Principal</h1>
+      <h1 className="text-3xl text-center italic ml-[-252px]">Menu Principal</h1>
       
       <div>
         {showWelcome && (

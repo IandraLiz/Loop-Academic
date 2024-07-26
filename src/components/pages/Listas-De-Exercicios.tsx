@@ -6,14 +6,10 @@ export function ListasDeExercicios() {
       <h1 className="text-center text-3xl italic font-bold">LISTAS DE EXERCÍCIOS</h1>
 
       <div className="flex pt-20">
-      <a href="/" className="flex flex-col items-center py-1 h-16">
-        <FaArrowLeft className="w-10 h-auto" />
-        <p className="w-32 text-sm text-center">Retornar ao Início</p>
-      </a>
-
-
-
-
+        <a href="/" className="flex flex-col items-center py-1 h-16">
+          <FaArrowLeft className="w-10 h-auto" />
+          <p className="w-32 text-sm text-center">Retornar ao Início</p>
+        </a>
         <div>
           <div className="w-[850px] h-[100px] bg-white ml-12 items-center border-2 border-[#707070]">
             <div className="h-3 w-full bg-[#0E7886]"></div>

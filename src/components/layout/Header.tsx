@@ -1,17 +1,14 @@
-import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { FaGear, FaBell } from "react-icons/fa6";
 import { IoExitSharp, IoCloseSharp } from 'react-icons/io5';
 
-import user from '../../img/user.png';
-import danger from '../../img/danger.png';
-import exercise from '../../img/ExerciseList.png'
-import supportMaterial from '../../img/SupportMaterial.png'
-import performance from '../../img/Performance.png'
-import doubts from '../../img/Doubts.png'
+import user from '../../../public/img/user.png';
+import danger from '../../../public/img/danger.png';
+import notificationItems from './NotificationItems';
 
 import { Home } from '../pages/Home';
-import { ListasDeExercicios } from "../pages/Listas-De-Exercicios";
+import { ListasDeExercicios } from '../pages/Listas-De-Exercicios';
 import { MaterialDeApoio } from '../pages/Material-De-Apoio';
 import { Desempenho } from '../pages/Desempenho';
 import { Duvidas } from '../pages/Duvidas';
@@ -21,6 +18,7 @@ import { Emblemas } from '../pages/Emblemas';
 export function Header() {
   const [showModal, setShowModal] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const navigate = useNavigate();
 
   const handleExitClick = (e) => {
     e.preventDefault();
@@ -39,9 +37,16 @@ export function Header() {
     setShowNotifications(prevState => !prevState);
   };
 
+  const handleNotificationClick = (link) => {
+    navigate(link);
+    setShowNotifications(false);
+  };
+
+  const notificationCount = notificationItems.length;
+
   return (
     <div className="bg-[#0E7886] w-full h-[137px] shadow-lg">
-      <div className="flex justify-end  text-base">
+      <div className="flex justify-end text-base">
         <a href="#" className="text-white p-1">
           Configurações <FaGear className="inline"/>
         </a>
@@ -52,7 +57,7 @@ export function Header() {
 
       <div className="flex items-center justify-between bg-white p-5 h-[111px]">
         <div className="flex items-center">
-          <a href="#" >
+          <a href="#">
             <img src={user} alt="User" className="bg-white w-[140px] h-[136px] rounded-full shadow-lg mr-2" />
           </a>
           <div className="ml-2 w-44">
@@ -81,8 +86,8 @@ export function Header() {
             <div className="flex flex-col items-center">
               <div className="relative">
                 <FaBell className="text-yellow-500 w-6 h-auto" />
-                <div className="absolute top-[-7px] right-[-5px] bg-[#C84C4C] border border-[#C84C4C] rounded text-white w-4 h-5 text-xs flex justify-center items-center font-bold">
-                  4
+                <div className="absolute top-[-7px] right-[-5px] bg-[#C84C4C] border border-[#C84C4C] rounded text-white w-5 h-5 text-xs flex justify-center items-center font-bold">
+                  {notificationCount}
                 </div>
               </div>
               <p className="text-base"><strong>Notificações</strong></p>
@@ -92,22 +97,12 @@ export function Header() {
           {showNotifications && (
             <div className="absolute right-[-20px] mt-6 w-[308px] bg-white shadow-lg overflow-hidden z-50">
               <ul className="px-2 text-sm">
-                <li className="flex p-4 border-b">
-                  <img src={exercise} alt="Exercicios" className="w-16 pr-5" />
-                  <p className='w-40'>NOVA lista de exercícios disponível. Confira! \o/</p>
+                {notificationItems.map((item, index) => (
+                  <li key={index} className="flex p-4 border-b cursor-pointer" onClick={() => handleNotificationClick(item.link)}>
+                    <img src={item.imgSrc} alt={item.message} className="w-16 h-16 pr-5" />
+                    <p className='w-40'>{item.message}</p>
                   </li>
-                <li className="flex p-4 border-b">
-                  <img src={supportMaterial} alt="Material de Suporte" className="w-16 pr-5" />
-                  <p className='w-40'>NOVO material de apoio adicionado. Que tal dedicar um pouco do eu tempo e estuda-lo?</p>
-                </li>
-                <li className="flex p-4 border-b">
-                  <img src={performance} alt="Desempenho" className="w-16 pr-5" />
-                  <p className='w-40'>O seu desempenho na Lista de Exercícios 01 está pronto.</p>
-                </li>
-                <li className="flex p-4">
-                  <img src={doubts} alt="Duvidas" className="w-16 pr-5" />
-                  <p className='w-40'>Você teve uma dúvida respondida!</p>
-                </li>
+                ))}
               </ul>
             </div>
           )}
@@ -125,7 +120,7 @@ export function Header() {
             </h1>
             <img src={danger} alt='megaphone' className="h-[80px] mx-auto mb-4" />
             <h2 className="text-xl text-red-600">
-              <strong>Deseja mesma sair do Loop Academic?</strong>
+              <strong>Deseja mesmo sair do Loop Academic?</strong>
             </h2>
             <p className="px-5">Não quer ficar e estudar mais um pouco? Nós iremos sentir a sua falta =[</p>
             <div className="pt-4 flex justify-end pr-5">

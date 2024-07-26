@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLock2Line } from "react-icons/ri";
 import { FaChevronRight } from "react-icons/fa";
-import { LiaBookReaderSolid } from 'react-icons/lia';
+// import { LiaBookReaderSolid } from 'react-icons/lia';
 import { IoIosInfinite } from 'react-icons/io';
 import { IoCloseSharp } from "react-icons/io5";
 
-import megaphone from '../../img/megaphone.png';
+import megaphone from '../../../public/img/megaphone.png';
+import icon from '../../../public/img/icon.png'
 
 export function Login() {
     const [email, setEmail] = useState('');
@@ -62,14 +63,17 @@ export function Login() {
             <div className="bg-white w-96 h-96 mb-5 shadow-lg p-5">
                 <div className="flex items-start">
                     <h2 className="w-80 mb-8 pt-8 text-[#0E7886] text-2xl opacity-80">Já tenho cadastro</h2>
-                    <div className="flex flex-col items-center mr-0 mt-[-80px]">
-                        <LiaBookReaderSolid className="w-[134px] h-auto mt-[4px]" />
-                        <h1 className="text-2xl w-[120px] flex items-center mt-[-20px]">
-                            L<IoIosInfinite className="align-middle w-[35px] h-auto" />P
-                        </h1>
-                        <h1 className="text-2xl w-[120px]">
-                            Academic
-                        </h1>
+                    <div className="flex flex-col items-center mr-0 mt-[-80px] ">
+                        <img src={icon} alt="Icone" className="w-48 h-auto mt-[15px]"/>
+                        <div className="text-2xl w-[120px] items-center  text-[#0E7886] font-bold">
+                            <h1 className="flex mt-[-4px]">
+                                L<IoIosInfinite className="align-middle w-[35px] h-auto" />P
+                            </h1>
+                            <h1 className="flex mt-[-10px]" >
+                                Academic
+                            </h1>
+                        </div>
+                        
                     </div>
                 </div>
 
