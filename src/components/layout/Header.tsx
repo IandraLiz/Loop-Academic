@@ -14,6 +14,7 @@ import { Desempenho } from '../pages/Desempenho';
 import { Duvidas } from '../pages/Duvidas';
 import { Forum } from '../pages/Forum';
 import { Emblemas } from '../pages/Emblemas';
+import { ListasDeExercicios01 } from '../pages/Listas-De-Exercicios-01';
 
 export function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -45,7 +46,7 @@ export function Header() {
   const notificationCount = notificationItems.length;
 
   return (
-    <div className="bg-[#0E7886] w-full h-[137px] shadow-lg">
+    <div className="bg-[#0E7886] w-full shadow-lg">
       <div className="flex justify-end text-base">
         <a href="#" className="text-white p-1">
           Configurações <FaGear className="inline"/>
@@ -55,17 +56,17 @@ export function Header() {
         </a>
       </div>
 
-      <div className="flex items-center justify-between bg-white p-5 h-[111px]">
+      <div className="flex items-center justify-between bg-white p-2 h-[100px]">
         <div className="flex items-center">
           <a href="#">
             <img src={user} alt="User" className="bg-white w-[140px] h-[136px] rounded-full shadow-lg mr-2" />
           </a>
-          <div className="ml-2 w-44">
-            <h3 className="text-lg">
-              Tiago <span className="text-gray-500">Include</span>
+          <div className="ml-1 w-44">
+            <h3 className="text-lg font-bold">
+              Tiago <span className="text-gray-500 font-medium">Include</span>
             </h3>
-            <p><strong>Matrícula:</strong> 201901004</p>
-            <p><strong>Turma:</strong> A4</p>
+            <p className="text-sm"><strong>Matrícula:</strong> 201901004</p>
+            <p className="text-sm"><strong>Turma:</strong> A4</p>
           </div>
         </div>
 
@@ -78,6 +79,7 @@ export function Header() {
             <Route path="/Duvidas" element={<Duvidas />} />
             <Route path="/Forum" element={<Forum />} />
             <Route path="/Emblemas" element={<Emblemas />} />
+            <Route path="/Listas-De-Exercicios-01" element={<ListasDeExercicios01 />} />
           </Routes>
         </div>
 
@@ -99,7 +101,7 @@ export function Header() {
               <ul className="px-2 text-sm">
                 {notificationItems.map((item, index) => (
                   <li key={index} className="flex p-4 border-b cursor-pointer" onClick={() => handleNotificationClick(item.link)}>
-                    <img src={item.imgSrc} alt={item.message} className="w-16 h-16 pr-5" />
+                    <img src={item.imgSrc} alt={item.message} className="w-14 h-12 pr-5" />
                     <p className='w-40'>{item.message}</p>
                   </li>
                 ))}
@@ -111,7 +113,7 @@ export function Header() {
 
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-          <div className="absolute top-[134px] left-1/2 transform -translate-x-1/2 w-[505px] h-72 bg-white shadow-lg z-50 text-center">
+          <div className="absolute top-[134px] w-[560px] h-72 bg-white shadow-lg z-50 text-center">
             <button onClick={handleCloseModal} className="absolute top-[-10px] right-[-10px] w-8 h-8 bg-red-700 text-white flex items-center justify-center">
               <IoCloseSharp className="w-8 h-8"/>
             </button>

@@ -1,22 +1,22 @@
 const menuItems = [
     {
       link: "/Lista-de-Exercicios",
-      imgSrc: '../../../public/img/ExerciseList.png',
+      imgSrc: '../../../public/img/exercicios.png',
       title: "Listas De Exercícios",
     },
     {
       link: "/Material-de-Apoio",
-      imgSrc: '../../../public/img/supportMaterial.png',
+      imgSrc: '../../../public/img/material.png',
       title: "Material de Apoio",
     },
     {
       link: "/Desempenho",
-      imgSrc: '../../../public/img/performance.png',
+      imgSrc: '../../../public/img/desempenho.png',
       title: "Desempenho",
     },
     {
       link: "/Duvidas",
-      imgSrc: '../../../public/img/doubts.png',
+      imgSrc: '../../../public/img/duvidas.png',
       title: "Dúvidas",
     },
     {
@@ -26,7 +26,7 @@ const menuItems = [
     },
     {
       link: "/Emblemas",
-      imgSrc: '../../../public/img/badges.png',
+      imgSrc: '../../../public/img/emblema.png',
       title: "Emblemas",
     },
     

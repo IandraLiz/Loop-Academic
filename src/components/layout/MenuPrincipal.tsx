@@ -8,7 +8,7 @@ export function Navbar() {
           <li key={index} className="w-72 h-44 text-center bg-[#0E7886] flex flex-col justify-between items-center shadow-lg">
             <a href={item.link} className="text-decoration-none text-inherit flex flex-col justify-between items-center w-full h-full">
               <div className="w-72 h-36 bg-white flex justify-center items-center">
-                <img src={item.imgSrc} alt={item.title} />
+                <img className='w-[100px]' src={item.imgSrc} alt={item.title} />
               </div>
               <p className="text-white flex justify-center items-center text-2xl font-bangers text-center italic">{item.title}</p>
             </a>
