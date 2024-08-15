@@ -14,7 +14,7 @@ export function Home() {
   const navigate = useNavigate();
 
   const handleCodeSubmit = () => {
-    if (code === 'TURMABTI201901') {
+    if (code === 'BTI') {
       setShowWelcome(false);
       setShowValidCodeMessage(true);
     } else {

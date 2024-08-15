@@ -4,7 +4,7 @@ import { IoIosInfinite } from 'react-icons/io';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="flex justify-between items-end p-5 bg-[#0E7886] text-white">
+    <footer className="flex  items-end p-5 bg-[#0E7886] text-white w-[1470px]">
       <div className="flex flex-col items-center mr-10">
         <LiaBookReaderSolid className="w-[134px] h-auto mt-[4px]" />
         <h1 className="text-2xl w-[120px] flex items-center">

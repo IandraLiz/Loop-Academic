@@ -9,7 +9,7 @@ export function Perfil() {
   };
 
   return (
-    <div className="bg-[#0E7886] min-h-screen flex items-start justify-center p-40">
+    <div className="bg-[#0E7886] w-[1470px] min-h-screen flex items-start justify-center p-40">
       <button onClick={handleBack} className="mr-5 mt-5">
         <FaArrowLeft className="text-white text-2xl w-10 h-auto" />
       </button>

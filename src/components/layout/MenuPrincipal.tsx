@@ -1,8 +1,8 @@
-import menuItems from './MenuItens';
+import menuItems from '../data/MenuItems';
 
 export function Navbar() {
   return (
-    <nav className="flex justify-center py-24">
+    <nav className="flex justify-center py-24 w-[1470px]">
       <ul className="grid grid-cols-3 gap-3 list-none p-0 m-0">
         {menuItems.map((item, index) => (
           <li key={index} className="w-72 h-44 text-center bg-[#0E7886] flex flex-col justify-between items-center shadow-lg">

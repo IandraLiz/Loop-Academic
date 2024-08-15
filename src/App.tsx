@@ -10,6 +10,7 @@ import { Login } from './components/pages/Login';
 import { Perfil } from './components/pages/perfil';
 import { CadastroDeAluno } from './components/pages/Cadastro-De-Aluno';
 import { Exercicio } from './components/pages/Exercicio';
+import { Material } from './components/pages/Material';
 
 import './index.css';
 
@@ -54,6 +55,11 @@ const App = () => {
           <Route 
             path="/exercicio" 
             element={<Exercicio />} 
+          />
+
+          <Route 
+            path="/material" 
+            element={<Material />} 
           />
 
         </Routes>

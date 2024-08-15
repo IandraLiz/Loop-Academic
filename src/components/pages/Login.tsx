@@ -36,7 +36,7 @@ export function Login() {
     }, []);
 
     return (
-        <div className="bg-[#0E7886] w-screen h-screen flex flex-col justify-center items-center relative">
+        <div className="bg-[#0E7886] w-[1470px] h-screen flex flex-col justify-center items-center relative">
             {error && showModal && (
                 <>
                     <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={closeModal}></div>
