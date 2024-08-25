@@ -3,9 +3,9 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { FaGear, FaBell } from 'react-icons/fa6';
 import { IoExitSharp, IoCloseSharp } from 'react-icons/io5';
 
-import user from '../../../public/img/user.png';
 import danger from '../../../public/img/danger.png';
 import notificationItems from '../data/NotificationItens';
+import UsuarioItens from '../data/UsuarioItens'; // Corrija o caminho conforme necessário
 
 import { Home } from '../pages/Home';
 import { Usuario } from '../pages/Usuario';
@@ -51,6 +51,9 @@ export function Header() {
   };
 
   const notificationCount = notificationItems.length;
+  
+  // Assumindo que há apenas um item no array UsuarioItens
+  const userInfo = UsuarioItens[0];
 
   return (
     <div className='bg-[#0E7886] w-[1510px] shadow-lg'>
@@ -66,14 +69,14 @@ export function Header() {
       <div className='flex items-center justify-between bg-white p-2 h-[80px]'>
         <div className='flex items-center'>
           <a href='/Perfil'>
-            <img src={user} alt='User' className='bg-white w-[130px] h-[130px] rounded-full shadow-lg mr-2' />
+            <img src={userInfo.img} alt='User' className='bg-white w-[130px] h-[130px] rounded-full shadow-lg mr-2' />
           </a>
           <div className='ml-1 w-44'>
             <h3 className='text-lg font-bold'>
-              Tiago 
+              {userInfo.nome}
             </h3>
-            <p className='text-sm'><strong>Matrícula:</strong> 201901004</p>
-            <p className='text-sm'><strong>Turma:</strong> A4</p>
+            <p className='text-sm'><strong>Matrícula:</strong> {userInfo.matricula}</p>
+            <p className='text-sm'><strong>Turma:</strong> {userInfo.turma}</p>
           </div>
         </div>
 

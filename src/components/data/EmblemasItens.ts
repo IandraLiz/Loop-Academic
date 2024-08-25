@@ -5,7 +5,7 @@ const EmblemasItens = [
     tittle2: 'Como um lobo',
     discricao: 'Termine o TCC a tempo e impressione a orientadora.',
     numero: '#0001',
-    add: 'false',
+    add: 'true',
  },
    {
      icone: '../../../public/img/Vip.png',

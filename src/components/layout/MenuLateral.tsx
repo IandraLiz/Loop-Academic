@@ -4,7 +4,7 @@ import { IoIosInfinite } from "react-icons/io";
 
 export function MenuLateral() {
   return (
-    <nav className="w-[235px] h-[1180px] bg-[#0E7886] p-2 flex flex-col justify-between">
+    <nav className="w-[235px] h-[1000px] bg-[#0E7886] p-2 flex flex-col justify-between">
       <ul className="list-none mt-8 text-sm italic text-[17px] text-[#0E7886] m-0 text-center font-bold">
         {menuItems.map((item, index) => (
           <a

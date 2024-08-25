@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaArrowLeft, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaArrowLeft, FaChevronDown, FaChevronUp, FaPaperclip } from 'react-icons/fa';
 
 export function EnviarDuvidas() {
     const [anexos, setAnexos] = useState([]);
@@ -148,7 +148,7 @@ export function EnviarDuvidas() {
                             </button>
 
                         {isTematicaOpen && (
-                            <ul className=" bg-white border border-[#707070] text-black">
+                            <ul className="bg-white border border-[#707070] text-black">
                                 <li 
                                     className="px-4 py-2 cursor-pointer hover:bg-gray-200"
                                     onClick={() => handleTematicaSelect('Linguagem C')}
@@ -218,11 +218,9 @@ export function EnviarDuvidas() {
                             id="fileInput"
                             multiple
                         />
-                        <label htmlFor="fileInput">
-                            <img 
-                                src="img/anexar.png" 
-                                alt="Anexar Arquivo" 
-                                className='h-8 pr-4 cursor-pointer'
+                        <label htmlFor="fileInput" className='flex items-center'>
+                            <FaPaperclip 
+                                className='w-10 h-10 pr-4 cursor-pointer text-black'
                             />
                         </label>
                         <button 
@@ -232,13 +230,8 @@ export function EnviarDuvidas() {
                         </button>
                     </div>
 
-                    {successMessage && (
-                        <p className='text-green-500 mt-2'>{successMessage}</p>
-                    )}
-                    
-                    {error && (
-                        <p className='text-red-500 mt-2'>{error}</p>
-                    )}
+                    {error && <p className="text-red-600 mt-2">{error}</p>}
+                    {successMessage && <p className="text-green-600 mt-2">{successMessage}</p>}
                 </div>
             </div>
         </div>
