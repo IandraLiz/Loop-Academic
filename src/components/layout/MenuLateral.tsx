@@ -1,10 +1,10 @@
-import menuItems from "../data/MenuItems";
+import menuItems from "../data/MenuItens";
 import { LiaBookReaderSolid } from "react-icons/lia";
 import { IoIosInfinite } from "react-icons/io";
 
 export function MenuLateral() {
   return (
-    <nav className="w-[235px] h-[1000px] bg-[#0E7886] p-2 flex flex-col justify-between">
+    <nav className="w-[235px] h-[1180px] bg-[#0E7886] p-2 flex flex-col justify-between">
       <ul className="list-none mt-8 text-sm italic text-[17px] text-[#0E7886] m-0 text-center font-bold">
         {menuItems.map((item, index) => (
           <a
@@ -12,7 +12,7 @@ export function MenuLateral() {
             href={item.link}
             className="flex items-center bg-white p-2 mb-1 shadow-lg h-12 text-decoration-none"
           >
-            <img src={item.imgSrc} className="w-8 mr-2" />
+            <img src={item.imgSrc} className="w-7 mr-2" />
             <p>{item.title.toUpperCase()}</p>
           </a>
         ))}

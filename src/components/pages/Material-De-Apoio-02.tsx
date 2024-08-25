@@ -1,5 +1,5 @@
-import MaterialDeApoioItems from '../data/MaterialDeApoioItems';
-import Material from '../data/MaterialItems';
+import MaterialDeApoioItems from '../data/MaterialDeApoioItens';
+import Material from '../data/MaterialItens';
 import { FaArrowLeft } from 'react-icons/fa';
 
 import pesquisa from '../../../public/img/pesquisa.png';
@@ -8,7 +8,7 @@ export function MaterialDeApoio02() {
   const primeiroTitulo = Material[0].titulo;
 
   return (
-    <div className='mt-[0px] absolute top-[-10px] left-[-550px]'>
+    <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
       <h1 className='text-center text-3xl italic font-bold ml-32'>
         MATERIAL DE APOIO - {primeiroTitulo.toUpperCase()}
       </h1>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoCloseSharp } from 'react-icons/io5';
-import MaterialDeApoioItems from '../data/MaterialDeApoioItems';
+import MaterialDeApoioItems from '../data/MaterialDeApoioItens';
 
 export function Material() {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isDownloadVisible, setIsDownloadVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPdf, setSelectedPdf] = useState(null);
 
   const handleSelectExercise = (index) => {
     setSelectedIndex(index);
@@ -23,24 +24,24 @@ export function Material() {
     }
   };
 
-  const handleDownloadClick = () => {
-    setIsDownloadVisible(true);
-  };
-
-  const handleCloseDownload = () => {
-    setIsDownloadVisible(false);
-  };
-
   const selectedExercise = MaterialDeApoioItems[selectedIndex];
 
-  // Função para converter links padrão do YouTube para embed
   const getEmbedLink = (link) => {
     return link.includes("embed")
       ? link
       : link.replace("watch?v=", "embed/");
   };
 
-  // Renderizar o material com base no tipo
+  const handlePdfClick = (pdf) => {
+    setSelectedPdf(pdf);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedPdf(null);
+  };
+
   const renderMaterial = () => {
     if (selectedExercise.tipo === 'Video-Aula') {
       return (
@@ -69,7 +70,7 @@ export function Material() {
             <h2 className='text-[#0E7886] text-2xl font-semibold mb-4'>{selectedExercise.recomendado}</h2>
             <div className='w-full h-px bg-black mb-4 -mt-4'></div>
             <div className='flex flex-col items-center'>
-              <button onClick={handleDownloadClick}>
+              <button onClick={() => handlePdfClick(selectedExercise.arquivo)}>
                 <img 
                   className='w-24'
                   src={selectedExercise.imgArquivo} 
@@ -84,7 +85,7 @@ export function Material() {
             <h2 className='text-[#0E7886] text-2xl font-semibold mb-4'>{selectedExercise.similar}</h2>
             <div className='w-full h-px bg-black mb-4 -mt-4'></div>
             <div className='flex flex-col items-center'>
-              <button onClick={handleDownloadClick}>
+              <button onClick={() => handlePdfClick(selectedExercise.arquivo)}>
                 <img 
                   className='w-24'
                   src={selectedExercise.imgArquivo} 
@@ -101,29 +102,6 @@ export function Material() {
 
   return (
     <div>
-      {/* Quadro de download */}
-      {isDownloadVisible && (
-        <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50'>
-          <div className='bg-white p-8 rounded shadow-lg relative'>
-            <button
-              className='absolute top-2 right-2 text-gray-600'
-              onClick={handleCloseDownload}
-            >
-              <IoCloseSharp className='w-8 h-8' />
-            </button>
-            <h1 className='text-2xl font-semibold mb-4'>Apostila</h1>
-            <a
-              href={selectedExercise.arquivo}
-              download
-              className='bg-[#0E7886] text-white px-6 py-2 rounded'
-            >
-              Baixar PDF
-            </a>
-          </div>
-        </div>
-      )}
-
-      {/* Conteúdo principal */}
       <div>
         <div className='absolute top-[19px] left-[15px] text-[#0E7886] w-[135px] flex flex-col items-center'>
           <a href='/Material-De-Apoio-02' className='flex flex-col items-center'>
@@ -175,7 +153,7 @@ export function Material() {
         </div>
       </div>
 
-      <div className='ml-[1270px] bg-[#302D2DCC] w-[200px] h-[800px]'>
+      <div className='ml-[1310px] bg-[#302D2DCC] w-[200px] h-[800px]'>
         <div className='text-white p-4'>
           <p>Lista de Exercícios 01</p>
           <h1 className='text-lg'>Introdução à Linguagem C</h1>
@@ -199,6 +177,42 @@ export function Material() {
           </button>
         ))}
       </div>
+
+      {isModalOpen && (
+        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
+          <div className='relative w-[900px] h-[350px] bg-white shadow-lg z-50 text-black'>
+            <h1 className='text-xl bg-[#0E7886] text-white h-[51px] flex items-center p-5'>Apostila</h1>
+            <div className='p-5'>
+              <p>Consulte aqui as apostilas destinadas a te auxiliar em seus estudos.</p>
+              <h2 className='relative bg-[#0E7886] text-white w-96 px-4 mt-4 text-xl'>Apostila 01 - Int. à Linguagem C</h2>
+              <div className='flex p-5'>
+                <img 
+                  className='w-24'
+                  src={selectedExercise.imgArquivo} 
+                  alt='PDF' 
+                />
+                <p className='w-full pl-4'>Esta apostila apresenta uma revisão teórica acerca da temática da Introdução à Linguagem C, demonstrando as principais bibliotecas, suas funções e as funções de entrada e saída que são utilizadas com grande frequência. É altamente recomendada a sua leitura!</p>
+              </div>
+              <div className='flex justify-end mt-4'>
+                <a
+                  href={selectedPdf}
+                  download
+                  className='bg-[#0E7886] text-white py-2 px-4 text-xl w-[200px] flex justify-center'
+                >
+                  Baixar Apostila
+                </a>
+              </div>
+            </div>
+            
+            <button
+              onClick={closeModal}
+              className='absolute top-[-10px] right-[-10px] w-8 h-8 bg-red-700 text-white flex items-center justify-center'
+            >
+              <IoCloseSharp className='w-8 h-8' />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

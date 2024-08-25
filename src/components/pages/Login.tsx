@@ -53,7 +53,7 @@ export function Login() {
                             <button onClick={() => navigate('#')} className="text-lg bg-[#0E7886] hover:bg-cyan-800 w-[237px] h-[41px] text-white">
                                 <strong>Esqueci minha senha</strong>
                             </button>
-                            <button onClick={() => navigate('/perfil')} className="text-lg bg-[#0E7886] hover:bg-cyan-800 w-[237px] h-[41px] text-white">
+                            <button onClick={() => navigate('/usuario')} className="text-lg bg-[#0E7886] hover:bg-cyan-800 w-[237px] h-[41px] text-white">
                                 <strong>Realizar Cadastro</strong>
                             </button>
                         </div>
@@ -112,7 +112,7 @@ export function Login() {
                 </div>
             </div>
 
-            <a href="/perfil" className="bg-white w-96 h-20 shadow-lg p-5 flex items-center justify-between">
+            <a href="/usuario" className="bg-white w-96 h-20 shadow-lg p-5 flex items-center justify-between">
                 <h2 className="mb-8 pt-8 text-[#0E7886] text-2xl opacity-80">Criar minha conta</h2>
                 <FaChevronRight className="text-[#0E7886] text-[25px]" />
             </a>

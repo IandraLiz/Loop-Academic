@@ -9,11 +9,6 @@ const Material = [
       titulo: 'Estruturas de Decisão IF e SWITCH',
       total: '5',
     },
-    {
-      link: '/Material-De-Apoio-02',
-      titulo: 'Estruturas de Decisão IF e SWITCH',
-      total: '5',
-    },
     
 ];
   

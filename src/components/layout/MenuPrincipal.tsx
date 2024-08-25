@@ -1,4 +1,4 @@
-import menuItems from '../data/MenuItems';
+import menuItems from '../data/MenuItens';
 
 export function Navbar() {
   return (

@@ -1,9 +1,7 @@
 import EmblemasItens from '../data/EmblemasItens';
 import { FaArrowLeft } from 'react-icons/fa';
 
-export function Emblemas() {
-    const emblemasFiltrados = EmblemasItens.filter(item => item.add === 'true');
-
+export function TodosOsEmblemas() {
     return (
         <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
             <h1 className='text-center text-3xl italic font-bold ml-[50px]'>EMBLEMAS</h1>
@@ -17,12 +15,12 @@ export function Emblemas() {
                 <div className='flex ml-20'>
                     <a 
                         href='/Emblemas' 
-                        className='w-96 h-8 bg-[#0E7886] text-white text-xl border-2 border-[#707070] flex justify-center items-center'>
+                        className='w-96 h-8 text-black text-xl border-2 border-[#707070] flex justify-center items-center'>
                         Meus Emblemas
                     </a>
                     <a 
                         href='/Todos-os-Emblemas' 
-                        className='w-96 h-8 text-black text-xl border-2 border-[#707070] flex justify-center items-center'>
+                        className='w-96 h-8 bg-[#0E7886] text-white text-xl border-2 border-[#707070] flex justify-center items-center'>
                         Todos os Emblemas
                     </a>
                 </div>
@@ -33,8 +31,11 @@ export function Emblemas() {
 
                 <div className='flex justify-center items-center my-8'>
                     <div className='grid grid-cols-3 gap-10'>
-                        {emblemasFiltrados.map((item) => (
-                            <div key={item.numero} className='relative border-2 border-[rgb(112,112,112)] w-[330px] h-full flex flex-col p-4 text-black'>
+                        {EmblemasItens.map((item) => (
+                            <div 
+                                key={item.numero} 
+                                className={`relative border-2 border-[rgb(112,112,112)] w-[330px] h-full flex flex-col p-4 text-black
+                                    ${item.add === 'false' ? 'opacity-50 filter grayscale' : ''}`}>
                                 <h1 className='absolute -top-2 -right-2 bg-[#0E7886] p-2 text-white'>
                                     {item.numero}
                                 </h1>

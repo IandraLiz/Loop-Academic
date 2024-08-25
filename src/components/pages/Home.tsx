@@ -40,8 +40,8 @@ export function Home() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center italic ml-[-252px]">Menu Principal</h1>
-      
+      <h1 className='text-3xl italic font-bold'>MENU PRINCIPAL</h1>
+
       <div>
         {showWelcome && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">

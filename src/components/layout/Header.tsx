@@ -5,16 +5,22 @@ import { IoExitSharp, IoCloseSharp } from 'react-icons/io5';
 
 import user from '../../../public/img/user.png';
 import danger from '../../../public/img/danger.png';
-import notificationItems from '../data/NotificationItems';
+import notificationItems from '../data/NotificationItens';
 
 import { Home } from '../pages/Home';
+import { Usuario } from '../pages/Usuario';
 import { ListasDeExercicios } from '../pages/Listas-De-Exercicios';
 import { MaterialDeApoio } from '../pages/Material-De-Apoio';
 import { Desempenho } from '../pages/Desempenho';
 import { Duvidas } from '../pages/Duvidas';
+import { EnviarDuvidas } from '../pages/Enviar-Duvidas';
 import { Forum } from '../pages/Forum';
+import { CriarTopico } from '../pages/Criar-Topico';
+import { Topico01 } from '../pages/Topico01';
 import { Emblemas } from '../pages/Emblemas';
+import { TodosOsEmblemas } from '../pages/Todos-os-Emblemas';
 import { ListasDeExercicios01 } from '../pages/Listas-De-Exercicios-01';
+import { ListasDeExercicios02 } from '../pages/Listas-De-Exercicios-02';
 import { MaterialDeApoio02 } from '../pages/Material-De-Apoio-02';
 
 export function Header() {
@@ -47,7 +53,7 @@ export function Header() {
   const notificationCount = notificationItems.length;
 
   return (
-    <div className='bg-[#0E7886] w-[1470px] shadow-lg'>
+    <div className='bg-[#0E7886] w-[1510px] shadow-lg'>
       <div className='flex justify-end text-base'>
         <a href='#' className='text-white p-1'>
           Configurações <FaGear className='inline'/>
@@ -59,12 +65,12 @@ export function Header() {
 
       <div className='flex items-center justify-between bg-white p-2 h-[80px]'>
         <div className='flex items-center'>
-          <a href='#'>
+          <a href='/Perfil'>
             <img src={user} alt='User' className='bg-white w-[130px] h-[130px] rounded-full shadow-lg mr-2' />
           </a>
           <div className='ml-1 w-44'>
             <h3 className='text-lg font-bold'>
-              Tiago <span className='text-gray-500 font-medium'>Include</span>
+              Tiago 
             </h3>
             <p className='text-sm'><strong>Matrícula:</strong> 201901004</p>
             <p className='text-sm'><strong>Turma:</strong> A4</p>
@@ -74,13 +80,19 @@ export function Header() {
         <div className='text-[#0E7886] font-semibold -ml-32 relative'>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/Usuario' element={<Usuario />} />
             <Route path='/Lista-de-Exercicios' element={<ListasDeExercicios />} />
             <Route path='/Material-de-Apoio' element={<MaterialDeApoio />} />
             <Route path='/Desempenho' element={<Desempenho />} />
             <Route path='/Duvidas' element={<Duvidas />} />
+            <Route path='/Enviar-Duvidas' element={<EnviarDuvidas />} />
             <Route path='/Forum' element={<Forum />} />
+            <Route path='/Criar-Topico' element={<CriarTopico />} />
+            <Route path='/Topico01' element={<Topico01 />} />
             <Route path='/Emblemas' element={<Emblemas />} />
+            <Route path='/Todos-os-Emblemas' element={<TodosOsEmblemas />} />
             <Route path='/Listas-De-Exercicios-01' element={<ListasDeExercicios01 />} />
+            <Route path='/Listas-De-Exercicios-02' element={<ListasDeExercicios02 />} />
             <Route path='/Material-De-Apoio-02' element={<MaterialDeApoio02 />} />
           </Routes>
         </div>
@@ -99,7 +111,7 @@ export function Header() {
           </a>
 
           {showNotifications && (
-            <div className='absolute right-[-20px] mt-6 w-[308px] bg-white shadow-lg overflow-hidden z-50'>
+            <div className='absolute right-[-8px] w-[280px] mt-4 bg-white shadow-lg overflow-hidden z-50'>
               <ul className='px-2 text-sm'>
                 {notificationItems.map((item, index) => (
                   <li key={index} className='flex p-4 border-b cursor-pointer' onClick={() => handleNotificationClick(item.link)}>

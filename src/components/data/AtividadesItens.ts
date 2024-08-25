@@ -6,19 +6,18 @@ const AtividadesItems = [
         link: '/Listas-De-Exercicios-01',
         total: '5',
         nivel: 'Fácil e Média',
-        status: 'DISPONÍVEL',
-        statusColor: 'text-green-500'
+        status: true,
     },
     {
         numero: '02',
         date: '24/02/2019',
-        titulo: 'Estrutura de Repetição',
+        titulo: 'Estrutura de Decisão',
+        link: '/Listas-De-Exercicios-02',
         total: '8',
         nivel: 'Média e Difícil',
-        status: 'INDISPONÍVEL',
-        statusColor: 'text-red-500'
+        status: false, 
     },
-  ];
-  
+    
+];
+
 export default AtividadesItems;
-  

@@ -7,10 +7,11 @@ import { Navbar } from './components/layout/MenuPrincipal';
 import { MenuLateral } from './components/layout/MenuLateral';
 import { Footer } from './components/layout/Footer';
 import { Login } from './components/pages/Login';
-import { Perfil } from './components/pages/perfil';
+import { Perfil } from './components/pages/Perfil';
 import { CadastroDeAluno } from './components/pages/Cadastro-De-Aluno';
 import { Exercicio } from './components/pages/Exercicio';
 import { Material } from './components/pages/Material';
+import { Usuario } from './components/pages/Usuario';
 
 import './index.css';
 
@@ -19,18 +20,13 @@ const App = () => {
     <Router>
       <React.StrictMode>
         <Routes>
-          <Route 
-            path="/login" 
-            element={<Login />} 
-          />
-          <Route 
-            path="/perfil" 
-            element={<Perfil />} 
-          />
-          <Route 
-            path="/cadastrodealuno" 
-            element={<CadastroDeAluno />} 
-          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/usuario" element={<Usuario />} />
+          <Route path="/cadastrodealuno" element={<CadastroDeAluno />} />
+          {/* <Route path="/usuario" element={<Usuario />} /> */}
+          <Route path="/exercicio" element={<Exercicio />} />
+          <Route path="/material" element={<Material />} />
+
           <Route 
             path="/" 
             element={
@@ -41,7 +37,18 @@ const App = () => {
               </>
             } 
           />
-          
+
+          <Route
+            path="/Perfil"
+            element={
+              <>
+                {/* <Header /> */}
+                <Perfil />
+                <Footer />
+              </>
+            }
+          />
+
           <Route
             path="*"
             element={
@@ -50,16 +57,6 @@ const App = () => {
                 <MenuLateral />
               </>
             }
-          />
-
-          <Route 
-            path="/exercicio" 
-            element={<Exercicio />} 
-          />
-
-          <Route 
-            path="/material" 
-            element={<Material />} 
           />
 
         </Routes>

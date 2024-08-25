@@ -3,7 +3,7 @@ import { FaArrowLeft, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoCloseSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
-import ListaDeExerciciosItems from '../data/ListaDeExerciciosItems';
+import ListaDeExerciciosItems from '../data/ListaDeExerciciosItens';
 
 export function Exercicio() {
   const [showDicas, setShowDicas] = useState(false);
@@ -149,7 +149,7 @@ export function Exercicio() {
         </div>
       </div>
 
-      <div className='ml-[1270px] bg-[#302D2DCC] w-[200px] h-[800px]'>
+      <div className='ml-[1310px] bg-[#302D2DCC] w-[200px] h-[800px]'>
         <div className='text-white p-4'>
           <p>Lista de Exercícios 01</p>
           <h1 className='text-lg'>Introdução à Linguagem C</h1>

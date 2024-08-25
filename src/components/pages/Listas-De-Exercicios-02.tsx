@@ -1,11 +1,11 @@
-import ListaDeExerciciosItems from '../data/ListaDeExerciciosItens';
+import ListaDeExercicios02Items from '../data/ListaDeExercicios02Itens';
 import { FaArrowLeft } from 'react-icons/fa';
 
-export function ListasDeExercicios01() {
+export function ListasDeExercicios02() {
   return (
     <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
         <h1 className='text-center text-3xl italic font-bold ml-[190px]'>
-            LISTAS DE EXERCÍCIOS 01 - INTRODUÇÃO À LINGUAGEM C
+            LISTAS DE EXERCÍCIOS 02 - ESTRUTURA DE DECISÃO
         </h1>
         
         <div className='flex pt-20'>
@@ -19,7 +19,7 @@ export function ListasDeExercicios01() {
                     <div className='h-3 w-full bg-[#0E7886]'></div>
                     <div className='px-4'>
                         <p className='text-[#0000003F] mt-2'>Escolha e responda</p>
-                        <h1 className='text-2xl font-semibold'>Exercícios da Listas 01 - Introdução à Linguagem C</h1>
+                        <h1 className='text-2xl font-semibold'>Exercícios da Listas 02 - Estrutura de Decisão</h1>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@ export function ListasDeExercicios01() {
                             <p className='w-6/12 mr-2'>Status</p>
                         </div>
                             
-                        {ListaDeExerciciosItems.map((item, index) => (
+                        {ListaDeExercicios02Items.map((item, index) => (
                             <div key={index} className='px-2 flex items-center mt-4 text-[#707070] text-center'>
                                 <p className='w-2/12 mr-2'>{item.numero}</p>
                                 <a href={item.link} className='w-6/12 text-left mr-2'>
