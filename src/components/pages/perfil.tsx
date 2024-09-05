@@ -10,6 +10,16 @@ import notificationItems from '../data/NotificationItens';
 import UsuarioItens from '../data/UsuarioItens';
 import EmblemasItens from '../data/EmblemasItens';
 
+import ListaDeExerciciosItems from '../data/ListaDeExerciciosItens';
+import ListaDeExercicios02Items from '../data/ListaDeExercicios02Itens';
+
+// Combine as listas de exercícios
+const combinedExerciseItems = [...ListaDeExerciciosItems, ...ListaDeExercicios02Items];
+
+// Filtra as questões respondidas (status: true)
+const totalRespondidas = combinedExerciseItems.filter(item => item.status === true).length;
+
+
 export function Perfil() {
   const navigate = useNavigate();
   const [profileImage, setProfileImage] = useState(user);
@@ -169,7 +179,8 @@ export function Perfil() {
               <div className='w-[1px] h-full bg-[#0E7886]'></div>
             </div>
             <h1 className='text-3xl italic font-bold py-6 w-1/5'>
-              9<br/> Questões Respondidas 
+            {totalRespondidas}<br/>
+              Questões Respondidas 
             </h1>
             <h1 className='text-3xl italic font-bold py-6 w-3/5'> 
               {EmblemasItens.filter(item => item.add === 'true').length}<br/>

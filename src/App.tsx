@@ -20,15 +20,14 @@ const App = () => {
     <Router>
       <React.StrictMode>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/usuario" element={<Usuario />} />
-          <Route path="/cadastrodealuno" element={<CadastroDeAluno />} />
-          {/* <Route path="/usuario" element={<Usuario />} /> */}
-          <Route path="/exercicio" element={<Exercicio />} />
-          <Route path="/material" element={<Material />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/usuario' element={<Usuario />} />
+          <Route path='/cadastrodealuno' element={<CadastroDeAluno />} />
+          <Route path='/exercicio' element={<Exercicio />} />
+          <Route path='/material' element={<Material />} />
 
           <Route 
-            path="/" 
+            path='/' 
             element={
               <>
                 <Header />
@@ -39,10 +38,9 @@ const App = () => {
           />
 
           <Route
-            path="/Perfil"
+            path='/Perfil'
             element={
               <>
-                {/* <Header /> */}
                 <Perfil />
                 <Footer />
               </>
@@ -50,7 +48,7 @@ const App = () => {
           />
 
           <Route
-            path="*"
+            path='*'
             element={
               <>
                 <Header />

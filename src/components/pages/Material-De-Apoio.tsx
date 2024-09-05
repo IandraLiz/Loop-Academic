@@ -24,7 +24,7 @@ export function MaterialDeApoio() {
   const emptySlots = totalItems - filteredItems.length;
 
   return (
-    <div className='mt-0 absolute top-[-10px] left-[-550px] pb-20'>
+    <div className='mt-0 absolute top-[-10px] left-[-550px]'>
       <h1 className='text-center text-3xl italic font-bold ml-[190px]'>MATERIAL DE APOIO</h1>
 
       <div className='flex pt-20'>

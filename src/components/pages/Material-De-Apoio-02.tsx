@@ -8,7 +8,7 @@ export function MaterialDeApoio02() {
   const primeiroTitulo = Material[0].titulo;
 
   return (
-    <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
+    <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-10'>
       <h1 className='text-center text-3xl italic font-bold ml-32'>
         MATERIAL DE APOIO - {primeiroTitulo.toUpperCase()}
       </h1>
@@ -16,7 +16,7 @@ export function MaterialDeApoio02() {
       <div className='flex pt-20'>
         <a href='/Material-De-Apoio' className='flex flex-col items-center py-1 h-full ml-9'>
           <FaArrowLeft className='w-10 h-auto' />
-          <p className='w-32 text-sm text-center'>Retornar ao Materiais de Apoio</p>
+          <p className='w-32 text-sm text-center'>Retornar ao Material de Apoio</p>
         </a>
 
         <div>
@@ -41,19 +41,19 @@ export function MaterialDeApoio02() {
             </div>
 
             {MaterialDeApoioItems.map((item, index) => (
-              <div className='w-[880px] h-64 bg-white mt-5 items-center border-2 border-[#707070]'>
+              <div className='w-[880px] h-56 bg-white mt-5 items-center border-2 border-[#707070]'>
                 <div className='h-6 w-full bg-[#0E862E] border-2 border-t-0 border-[#707070]'></div>
   
                 <div key={index} className='flex'>
-                  <img src={item.img} alt="Thumbnail do vídeo" className='w-2/3 h-[229px]'/>
+                  <img src={item.img} alt="Thumbnail do vídeo" className='w-2/3 h-[197px]'/>
   
                   <div className='flex flex-col justify-between mt-2'>
                     <div className='ml-4 flex items-end justify-between'>
-                      <h1 className='text-2xl'>{item.titulo}</h1>
+                      <h1 className='text-xl'>{item.titulo}</h1>
                       <p className='text-black mr-4'>{item.tipo}</p>
                     </div>
 
-                    <p className='text-black mt-4 mx-4'>{item.introduca}</p>
+                    <p className='text-black text-base mt-4 mx-4'>{item.introduca}</p>
                     
                     <div className='flex justify-end mt-4 mx-4 mb-4'>
                       <a 

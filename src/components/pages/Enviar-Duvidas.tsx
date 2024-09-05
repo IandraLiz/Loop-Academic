@@ -123,7 +123,7 @@ export function EnviarDuvidas() {
                 </div>
             </div>
 
-            <div className='w-[1120px] h-full mt-8 ml-20 bg-white border-2 border-[#707070] shadow-lg'>
+            <div className='w-[1000px] h-full mt-8 ml-40 bg-white border-2 border-[#707070] shadow-lg'>
                 <div className='h-4 w-full bg-[#0E7886]'></div>
                 <div className='m-4'>
                     <div className='flex text-[#707070]'>

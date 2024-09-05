@@ -3,7 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 export function TodosOsEmblemas() {
     return (
-        <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
+        <div className='mt-[0px] absolute top-[-10px] left-[-550px]'>
             <h1 className='text-center text-3xl italic font-bold ml-[50px]'>EMBLEMAS</h1>
 
             <div className='flex pt-20'>
@@ -26,7 +26,7 @@ export function TodosOsEmblemas() {
                 </div>
             </div>
 
-            <div className='w-[1120px] h-full mt-8 ml-20 bg-white border-2 border-[#707070] shadow-lg'>
+            <div className='w-[1000px] h-full mt-8 ml-40 bg-white border-2 border-[#707070] shadow-lg'>
                 <div className='h-4 w-full bg-[#0E7886]'></div>
 
                 <div className='flex justify-center items-center my-8'>
@@ -34,7 +34,7 @@ export function TodosOsEmblemas() {
                         {EmblemasItens.map((item) => (
                             <div 
                                 key={item.numero} 
-                                className={`relative border-2 border-[rgb(112,112,112)] w-[330px] h-full flex flex-col p-4 text-black
+                                className={`relative border-2 border-[rgb(112,112,112)] w-[280px] h-full flex flex-col p-4 text-black
                                     ${item.add === 'false' ? 'opacity-50 filter grayscale' : ''}`}>
                                 <h1 className='absolute -top-2 -right-2 bg-[#0E7886] p-2 text-white'>
                                     {item.numero}
@@ -43,13 +43,13 @@ export function TodosOsEmblemas() {
                                     <img 
                                         src={item.icone} 
                                         alt='icone' 
-                                        className='w-20 h-20' />
+                                        className='w-auto h-16' />
                                     <div className='p-4'>
                                         <p className='w-40'>{item.tittle1}</p>
                                         <h1 className='text-xl w-48'>{item.tittle2}</h1>
                                     </div>
                                 </div>
-                                <p className='pt-4 h-16'>{item.discricao}</p>
+                                <p className='h-16'>{item.discricao}</p>
                             </div>
                         ))}
                     </div>

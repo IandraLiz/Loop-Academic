@@ -30,7 +30,7 @@ export function Topico01() {
   };
 
   return (
-    <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
+    <div className='mt-[0px] absolute top-[-10px] left-[-550px]'>
       <h1 className='text-center text-3xl italic font-bold ml-[200px]'>FÓRUM</h1>
 
       <div className='flex pt-20'>
@@ -72,7 +72,7 @@ export function Topico01() {
               <div className='flex justify-center'>
                 <img 
                   src={item.img} 
-                  alt="usuario"
+                  alt='usuario'
                   className='bg-white w-28 my-2 rounded-full shadow-lg' 
                 />
               </div>
@@ -81,10 +81,10 @@ export function Topico01() {
               <div className='border-2 border-[#707070] mt-4'>
                 <div className='text-black text-center bg-neutral-300 border-b-2 border-[#707070]'>4 Emblemas</div>
                 <div className='bg-white grid grid-cols-3 gap-4 p-2'>
-                  <img src="img/Vip.png" alt="" className='w-10' />
-                  <img src="img/linux.png" alt="" className='w-10' />
-                  <img src="img/desempenho.png" alt="" className='w-10' />
-                  <img src="img/NovoProgramador.png" alt="" className='w-10' />
+                  <img src='img/Vip.png' alt='' className='w-10' />
+                  <img src='img/linux.png' alt='' className='w-10' />
+                  <img src='img/desempenho.png' alt='' className='w-10' />
+                  <img src='img/NovoProgramador.png' alt='' className='w-10' />
                 </div>
               </div>
 
@@ -94,9 +94,13 @@ export function Topico01() {
                 <p className='text-sm font-light'>{item.data}, às {item.hora}</p>
                 <p className='text-base mt-8'>{item.resposta}</p>
               </div>
-              <div className='h-1/2'>
+              <div className='h-1/2 mt-4'>
                 <p className='border-b-2 border-black'>Assinatura</p>
+                <div className='flex justify-center py-2'>
+                  <img src='img/user.png' alt='' className='w-32 h-auto'/>
+                </div>
               </div>
+
             </div>
           </div>
         ))}
@@ -109,8 +113,8 @@ export function Topico01() {
               <p className='text-sm font-light'>Turma: A4</p>
               <div className='flex justify-center'>
                 <img 
-                  src="img/user.png"  
-                  alt="usuario"
+                  src='img/user.png'  
+                  alt='usuario'
                   className='bg-white w-28 my-2 rounded-full shadow-lg' 
                 />
               </div>
@@ -122,7 +126,7 @@ export function Topico01() {
                 </div>
                 <div className='bg-white grid grid-cols-3 gap-4 p-2'>
                   {EmblemasItens.filter(item => item.add === 'true').map((emblema, index) => (
-                    <img key={index} src={emblema.icone} alt="" className='w-10' />
+                    <img key={index} src={emblema.icone} alt='' className='w-10' />
                   ))}
                 </div>
               </div>
@@ -132,7 +136,7 @@ export function Topico01() {
                 <p className='text-sm font-light'>{new Date().toLocaleDateString()}, às {new Date().toLocaleTimeString()}</p>
                 <p className='text-base mt-8'>{resposta.texto}</p>
                 {resposta.image && (
-                  <img src={resposta.image} alt="Anexo" className='mt-4' />
+                  <img src={resposta.image} alt='Anexo' className='mt-4' />
                 )}
               </div>
               <div className='h-1/2'>
@@ -163,12 +167,12 @@ export function Topico01() {
                 Responder
               </button>
               <input
-                type="file"
+                type='file'
                 className='hidden'
-                id="file-input"
+                id='file-input'
                 onChange={handleImageChange}
               />
-              <label htmlFor="file-input">
+              <label htmlFor='file-input'>
                 <FaPaperclip className='w-10 h-10 pl-4 cursor-pointer text-black' />
               </label>
             </div>

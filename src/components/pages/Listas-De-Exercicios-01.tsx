@@ -11,7 +11,7 @@ export function ListasDeExercicios01() {
         <div className='flex pt-20'>
           <a href='/Lista-De-Exercicios' className='flex flex-col items-center py-1 h-full ml-9'>
             <FaArrowLeft className='w-10 h-auto' />
-            <p className='w-32 text-sm text-center'>Menu Principal</p>
+            <p className='w-32 text-sm text-center'>Retornar a Lista</p>
           </a>
 
             <div>

@@ -10,7 +10,7 @@ export function Duvidas() {
     };
 
     return (
-        <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-20'>
+        <div className='mt-[0px] absolute top-[-10px] left-[-550px] '>
             <h1 className='text-center text-3xl italic font-bold ml-[60px]'>DÚVIDAS</h1>
 
             <div className='flex pt-20'>
@@ -22,18 +22,18 @@ export function Duvidas() {
                 <div className='flex ml-20'>
                     <a 
                         href='/Duvidas' 
-                        className='w-96 h-8 bg-[#0E7886] text-white text-xl border-2 border-[#707070] flex justify-center items-center py-5'>
+                        className='w-96 h-8 bg-[#0E7886] text-white text-xl border-2 border-[#707070] flex justify-center items-center'>
                         Dúvidas Enviadas e Respondidas
                     </a>
                     <a 
-                        href='/Enviar-Duvidas' 
-                        className='w-96 h-8 text-black text-xl border-2 border-[#707070] flex justify-center items-center py-5'>
+                        href='/Enviar-Duvidas'
+                        className='w-96 h-8 text-black text-xl border-2 border-[#707070] flex justify-center items-center'>
                         Enviar Dúvidas
                     </a>
                 </div>
             </div>
 
-            <div className='w-[1120px] h-full mt-8 ml-20 bg-white border-2 border-[#707070] shadow-lg'>
+            <div className='w-[1000px] h-full mt-8 ml-40 bg-white border-2 border-[#707070] shadow-lg'>
                 <div className='h-4 w-full bg-[#0E7886]'></div>
                 <div className='px-4 py-6 text-black'>
                     {DuvidasItens.map((item, index) => (
@@ -49,9 +49,9 @@ export function Duvidas() {
                                     className='w-16 ml-2'
                                 />
                                 <div className='flex items-end space-x-2 ml-2 mb-2'>
-                                    <h1 className='w-[450px]'>{item.titulo}</h1>
+                                    <h1 className='w-[440px]'>{item.titulo}</h1>
                                     <h1>Data:</h1>
-                                    <p className='text-[#707070] w-[190px]'>{item.date}</p>
+                                    <p className='text-[#707070] w-24'>{item.date}</p>
                                     <h1>Status:</h1>
                                     <p className={item.status ? 'text-green-500' : 'text-yellow-500'}>
                                         {item.status ? 'RESPONDIDA' : 'AGUARDANDO RESPOSTA'}
@@ -71,7 +71,7 @@ export function Duvidas() {
                                     </div>
                                 </div>
                                 {item.status && (
-                                    <div className='my-4 ml-[510px] p-4 border border-[#707070] rounded-lg bg-gray-300 w-[500px]'>
+                                    <div className='my-4 ml-[410px] p-4 border border-[#707070] rounded-lg bg-gray-300 w-[500px]'>
                                         <div className='flex flex-col space-y-4'>
                                             <div className='flex items-start'>
                                                 <div className='ml-4 text-xs'>

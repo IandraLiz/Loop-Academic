@@ -94,7 +94,7 @@ export function Desempenho() {
   const percentage = Math.round((correctAnswers / totalItems) * 100);
 
   return (
-    <div className='mt-[0px] absolute top-[-10px] left-[-550px] pb-10'>
+    <div className='mt-[0px] absolute top-[-10px] left-[-550px]'>
       <h1 className='text-center text-3xl italic font-bold ml-[100px]'>DESEMPENHO</h1>
 
       <div className='flex pt-20'>

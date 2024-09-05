@@ -5,7 +5,7 @@ import { IoExitSharp, IoCloseSharp } from 'react-icons/io5';
 
 import danger from '../../../public/img/danger.png';
 import notificationItems from '../data/NotificationItens';
-import UsuarioItens from '../data/UsuarioItens'; // Corrija o caminho conforme necessário
+import UsuarioItens from '../data/UsuarioItens';
 
 import { Home } from '../pages/Home';
 import { Usuario } from '../pages/Usuario';
@@ -69,7 +69,7 @@ export function Header() {
       <div className='flex items-center justify-between bg-white p-2 h-[80px]'>
         <div className='flex items-center'>
           <a href='/Perfil'>
-            <img src={userInfo.img} alt='User' className='bg-white w-[130px] h-[130px] rounded-full shadow-lg mr-2' />
+            <img src={userInfo.img} alt='User' className='bg-white w-[130px] h-[130px] rounded-full shadow-2xl mr-2' />
           </a>
           <div className='ml-1 w-44'>
             <h3 className='text-lg font-bold'>
@@ -80,7 +80,7 @@ export function Header() {
           </div>
         </div>
 
-        <div className='text-[#0E7886] font-semibold -ml-32 relative'>
+        <div className='text-[#0E7886] font-semibold -ml-[230px] relative'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Usuario' element={<Usuario />} />
@@ -118,7 +118,7 @@ export function Header() {
               <ul className='px-2 text-sm'>
                 {notificationItems.map((item, index) => (
                   <li key={index} className='flex p-4 border-b cursor-pointer' onClick={() => handleNotificationClick(item.link)}>
-                    <img src={item.imgSrc} alt={item.message} className='w-14 h-12 pr-5' />
+                    <img src={item.imgSrc} alt={item.message} className='w-auto h-10 pr-5' />
                     <p className='w-40'>{item.message}</p>
                   </li>
                 ))}

@@ -9,7 +9,7 @@ export function CriarTopico() {
       <div className='flex pt-20'>
         <a href='/Forum' className='flex flex-col items-center py-1 h-full ml-9'>
           <FaArrowLeft className='w-10 h-auto' />
-          <p className='w-32 text-sm text-center'>Menu Principal</p>
+          <p className='w-32 text-sm text-center'>Retornar</p>
         </a>
 
         <a href='/Topico01' className='text-lg text-white bg-[#0E7886] py-2 px-4 m-3'>
