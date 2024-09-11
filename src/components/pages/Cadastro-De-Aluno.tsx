@@ -3,70 +3,78 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 export function CadastroDeAluno() {
-  const navigate = useNavigate();
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [formData, setFormData] = useState({
-    nome: '',
-    instituicao: '',
-    matricula: '',
-    email: '',
-    confirmarEmail: '',
-    senha: '',
-    confirmarSenha: ''
-  });
+    const navigate = useNavigate();
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [formData, setFormData] = useState({
+        nomeAluno: '',
+        instituicao: '',
+        matricula: '',
+        email: '',
+        confirmEmail: '',
+        password: '',
+        confirmPassword: ''
+    });
 
-  const [errorMessage, setErrorMessage] = useState(''); // Estado para mensagem de erro
+    const handleBack = () => {
+        navigate(-1); // Volta para a página anterior
+    };
 
-  const handleBack = () => {
-    navigate(-1); // Volta para a página anterior
-  };
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 
-  const handleCadastro = () => {
-    const { nome, instituicao, matricula, email, confirmarEmail, senha, confirmarSenha } = formData;
+    const handleCadastro = async () => {
+        if (formData.email !== formData.confirmEmail) {
+            alert("Os emails não coincidem.");
+            return;
+        }
 
-    // Verificar se todos os campos estão preenchidos
-    if (
-      nome &&
-      instituicao &&
-      matricula &&
-      email &&
-      confirmarEmail &&
-      senha &&
-      confirmarSenha
-    ) {
-      // Verifica se a matrícula tem 11 dígitos
-      if (matricula.length !== 11) {
-        setErrorMessage('Matrícula não aceita.');
-      }
-      // Verifica se o email termina com @alunos.ufersa.edu.br
-      else if (!email.endsWith('@alunos.ufersa.edu.br')) {
-        setErrorMessage('O email deve terminar com @alunos.ufersa.edu.br');
-      } 
-      else if (senha.length < 8) {
-        setErrorMessage('Sua senha precisa ter no mínimo 8 dígitos.');
-      } 
-      else if (email !== confirmarEmail) {
-        setErrorMessage('Os campos de email não coincidem.');
-      } 
-      else if (senha !== confirmarSenha) {
-        setErrorMessage('Os campos de senha não coincidem.');
-      } 
-      else {
-        setErrorMessage('');
-        setShowSuccessModal(true);
-      }
-    } else {
-      setErrorMessage('Por favor, preencha todos os campos.');
-    }
-  };
+        if (formData.password !== formData.confirmPassword) {
+            alert("As senhas não coincidem.");
+            return;
+        }
 
-  const handleLoginRedirect = () => {
-    navigate('/login');
-  };
+        const payload = {
+            nomeAluno: formData.nomeAluno,
+            instituicao: formData.instituicao,
+            matricula: formData.matricula,
+            email: formData.email,
+            is_active: true,
+            is_staff: false,
+            password: formData.password,
+        };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/cadastrar/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (response.ok) {
+                setShowSuccessModal(true);
+            } else {
+                const data = await response.json();
+                console.error('Erro no cadastro:', data);
+                alert('Erro ao realizar o cadastro.');
+            }
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            alert('Erro ao realizar o cadastro.');
+        }
+    };
+
+    const handleLoginRedirect = () => {
+        navigate('/login'); 
+    };
+
+
 
   return (
     <div className='bg-[#0E7886] w-[1520px] h-[500px] min-h-screen flex items-start justify-center py-36 relative'>
@@ -82,7 +90,7 @@ export function CadastroDeAluno() {
               type='text'
               name='nome'
               value={formData.nome}
-              onChange={handleChange}
+              onChange={handleInputChange}
               placeholder='Nome Completo'
               className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886]'
             />
@@ -91,7 +99,7 @@ export function CadastroDeAluno() {
                 type='text'
                 name='instituicao'
                 value={formData.instituicao}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder='Instituição de ensino'
                 className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886] w-full'
               />
@@ -99,7 +107,7 @@ export function CadastroDeAluno() {
                 type='text'
                 name='matricula'
                 value={formData.matricula}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder='Matrícula'
                 className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886] w-full'
               />
@@ -110,7 +118,7 @@ export function CadastroDeAluno() {
                 type='email'
                 name='email'
                 value={formData.email}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder='Email'
                 className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886] w-full'
               />
@@ -118,7 +126,7 @@ export function CadastroDeAluno() {
                 type='email'
                 name='confirmarEmail'
                 value={formData.confirmarEmail}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder='Confirmar Email'
                 className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886] w-full'
               />
@@ -129,7 +137,7 @@ export function CadastroDeAluno() {
                 type='password'
                 name='senha'
                 value={formData.senha}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder='Senha'
                 className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886] w-full'
               />
@@ -137,7 +145,7 @@ export function CadastroDeAluno() {
                 type='password'
                 name='confirmarSenha'
                 value={formData.confirmarSenha}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder='Confirmar Senha'
                 className='p-2 border-b border-gray-300 outline-none focus:border-[#0E7886] w-full'
               />
